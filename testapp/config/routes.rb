@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :comments
+  resources :documents
   resources :locations
   resources :owners
   resources :people
