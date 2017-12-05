@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+  
+  include ApplicationController::Live
+  
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   # GET /items
@@ -10,6 +13,12 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    response.headers['Content-Type'] = 'text/event-stream'
+    3.times {
+      response.stream.write "Hello, browser!\n"
+      sleep 1
+    }
+    response.stream.close
   end
 
   # GET /items/new
@@ -59,6 +68,21 @@ class ItemsController < ApplicationController
       format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  def events
+    # response.headers["Content-Type"] = "text/event-stream"
+    # response.stream.write "Hello, browser!\n\n"
+    # response.stream.close
+    
+    response.headers["Content-Type"] = "text/event-stream"
+    redis = Redis.new
+    redis.subscribe('item.create') do |on|
+      on.message do |event, data|
+        response.stream.write("data: #{data}\n\n")
+      end
+    end
+    response.stream.close
   end
 
   private
