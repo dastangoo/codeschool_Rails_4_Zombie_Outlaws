@@ -1,0 +1,433 @@
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "desc" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "owners"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "owners" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "people"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "people" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "job" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "father_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20171205073139)[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171205070757),
+(20171205065358),
+(20171204112637);
+
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-12-05 07:43:13.521929"], ["updated_at", "2017-12-05 07:43:13.521929"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.3ms)[0m  [1m[31mDELETE FROM "people"[0m
+  [1m[36mFixture Insert (0.6ms)[0m  [1m[32mINSERT INTO "people" ("name", "age", "job", "created_at", "updated_at", "id") VALUES ('MyString', 1, 'MyString', '2017-12-05 07:53:25.937461', '2017-12-05 07:53:25.937461', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "people" ("name", "age", "job", "created_at", "updated_at", "id") VALUES ('MyString', 1, 'MyString', '2017-12-05 07:53:25.937461', '2017-12-05 07:53:25.937461', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "age", "father_name", "created_at", "updated_at", "id") VALUES ('MyString', 1, 'MyString', '2017-12-05 07:53:25.941179', '2017-12-05 07:53:25.941179', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "age", "father_name", "created_at", "updated_at", "id") VALUES ('MyString', 1, 'MyString', '2017-12-05 07:53:25.941179', '2017-12-05 07:53:25.941179', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "owners"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "owners" ("name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2017-12-05 07:53:25.943737', '2017-12-05 07:53:25.943737', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "owners" ("name", "title", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2017-12-05 07:53:25.943737', '2017-12-05 07:53:25.943737', 298486374)[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "items"[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "items" ("name", "age", "desc", "created_at", "updated_at", "id") VALUES ('MyString', 1, 'MyString', '2017-12-05 07:53:25.946147', '2017-12-05 07:53:25.946147', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "items" ("name", "age", "desc", "created_at", "updated_at", "id") VALUES ('MyString', 1, 'MyString', '2017-12-05 07:53:25.946147', '2017-12-05 07:53:25.946147', 298486374)[0m
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+ItemsControllerTest: test_should_show_item
+------------------------------------------
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/items/980190962" for 127.0.0.1 at 2017-12-05 11:23:26 +0330
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering items/show.html.erb within layouts/application
+  Rendered items/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 568ms (Views: 557.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+ItemsControllerTest: test_should_create_item
+--------------------------------------------
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "items"[0m
+Started POST "/items" for 127.0.0.1 at 2017-12-05 11:23:26 +0330
+Processing by ItemsController#create as HTML
+  Parameters: {"item"=>{"age"=>"1", "desc"=>"MyString", "name"=>"MyString"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering items/new.html.erb within layouts/application
+  Rendered items/_form.html.erb (13.8ms)
+  Rendered items/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 55ms (Views: 18.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "items"[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+ItemsControllerTest: test_should_destroy_item
+---------------------------------------------
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "items"[0m
+Started DELETE "/items/980190962" for 127.0.0.1 at 2017-12-05 11:23:26 +0330
+Processing by ItemsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/items
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "items"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+ItemsControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/items" for 127.0.0.1 at 2017-12-05 11:23:26 +0330
+Processing by ItemsController#index as HTML
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered items/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+ItemsControllerTest: test_should_get_new
+----------------------------------------
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/items/new" for 127.0.0.1 at 2017-12-05 11:23:26 +0330
+Processing by ItemsController#new as HTML
+  Rendering items/new.html.erb within layouts/application
+  Rendered items/_form.html.erb (1.5ms)
+  Rendered items/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+ItemsControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/items/980190962/edit" for 127.0.0.1 at 2017-12-05 11:23:26 +0330
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering items/edit.html.erb within layouts/application
+  Rendered items/_form.html.erb (2.0ms)
+  Rendered items/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+ItemsControllerTest: test_should_update_item
+--------------------------------------------
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/items/980190962" for 127.0.0.1 at 2017-12-05 11:23:26 +0330
+Processing by ItemsController#update as HTML
+  Parameters: {"item"=>{"age"=>"1", "desc"=>"MyString", "name"=>"MyString"}, "id"=>"980190962"}
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendering items/edit.html.erb within layouts/application
+  Rendered items/_form.html.erb (1.4ms)
+  Rendered items/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+PeopleControllerTest: test_should_destroy_person
+------------------------------------------------
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "people"[0m
+Started DELETE "/people/980190962" for 127.0.0.1 at 2017-12-05 11:23:26 +0330
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+PeopleControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/people" for 127.0.0.1 at 2017-12-05 11:23:26 +0330
+Processing by PeopleController#index as HTML
+  Rendering people/index.html.erb within layouts/application
+  Rendered people/index.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+PeopleControllerTest: test_should_get_edit
+------------------------------------------
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/people/980190962/edit" for 127.0.0.1 at 2017-12-05 11:23:26 +0330
+Processing by PeopleController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  Rendering people/edit.html.erb within layouts/application
+  Rendered people/_form.html.erb (3.6ms)
+  Rendered people/edit.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+PeopleControllerTest: test_should_get_new
+-----------------------------------------
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/people/new" for 127.0.0.1 at 2017-12-05 11:23:26 +0330
+Processing by PeopleController#new as HTML
+  Rendering people/new.html.erb within layouts/application
+  Rendered people/_form.html.erb (2.3ms)
+  Rendered people/new.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+PeopleControllerTest: test_should_update_person
+-----------------------------------------------
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/people/980190962" for 127.0.0.1 at 2017-12-05 11:23:26 +0330
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+PeopleControllerTest: test_should_create_person
+-----------------------------------------------
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "people"[0m
+Started POST "/people" for 127.0.0.1 at 2017-12-05 11:23:26 +0330
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+PeopleControllerTest: test_should_show_person
+---------------------------------------------
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT  "people".* FROM "people" WHERE "people"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/people/980190962" for 127.0.0.1 at 2017-12-05 11:23:27 +0330
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  Rendering people/show.html.erb within layouts/application
+  Rendered people/show.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+UsersControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/users/980190962/edit" for 127.0.0.1 at 2017-12-05 11:23:27 +0330
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.0ms)
+  Rendered users/edit.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+UsersControllerTest: test_should_show_user
+------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/users/980190962" for 127.0.0.1 at 2017-12-05 11:23:27 +0330
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+UsersControllerTest: test_should_get_index
+------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/users" for 127.0.0.1 at 2017-12-05 11:23:27 +0330
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+UsersControllerTest: test_should_create_user
+--------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for 127.0.0.1 at 2017-12-05 11:23:27 +0330
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"age"=>"1", "father_name"=>"MyString", "name"=>"MyString"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "age", "father_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "MyString"], ["age", 1], ["father_name", "MyString"], ["created_at", "2017-12-05 07:53:27.089310"], ["updated_at", "2017-12-05 07:53:27.089310"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users/980190963
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (2.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------
+UsersControllerTest: test_should_get_new
+----------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/users/new" for 127.0.0.1 at 2017-12-05 11:23:27 +0330
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (2.8ms)
+  Rendered users/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------
+UsersControllerTest: test_should_destroy_user
+---------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started DELETE "/users/980190962" for 127.0.0.1 at 2017-12-05 11:23:27 +0330
+Processing by UsersController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users
+Completed 302 Found in 2ms (ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+UsersControllerTest: test_should_update_user
+--------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/users/980190962" for 127.0.0.1 at 2017-12-05 11:23:27 +0330
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"age"=>"1", "father_name"=>"MyString", "name"=>"MyString"}, "id"=>"980190962"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------
+OwnersControllerTest: test_should_get_edit
+------------------------------------------
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/owners/980190962/edit" for 127.0.0.1 at 2017-12-05 11:23:27 +0330
+Processing by OwnersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering owners/edit.html.erb within layouts/application
+  Rendered owners/_form.html.erb (2.2ms)
+  Rendered owners/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+OwnersControllerTest: test_should_show_owner
+--------------------------------------------
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/owners/980190962" for 127.0.0.1 at 2017-12-05 11:23:27 +0330
+Processing by OwnersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering owners/show.html.erb within layouts/application
+  Rendered owners/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------
+OwnersControllerTest: test_should_update_owner
+----------------------------------------------
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/owners/980190962" for 127.0.0.1 at 2017-12-05 11:23:27 +0330
+Processing by OwnersController#update as HTML
+  Parameters: {"owner"=>{"name"=>"MyString", "title"=>"MyString"}, "id"=>"980190962"}
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/owners/980190962
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------
+OwnersControllerTest: test_should_create_owner
+----------------------------------------------
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "owners"[0m
+Started POST "/owners" for 127.0.0.1 at 2017-12-05 11:23:27 +0330
+Processing by OwnersController#create as HTML
+  Parameters: {"owner"=>{"name"=>"MyString", "title"=>"MyString"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "owners" ("name", "title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "MyString"], ["title", "MyString"], ["created_at", "2017-12-05 07:53:27.171096"], ["updated_at", "2017-12-05 07:53:27.171096"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/owners/980190963
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "owners"[0m
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" ORDER BY "owners"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (2.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+OwnersControllerTest: test_should_destroy_owner
+-----------------------------------------------
+  [1m[36mOwner Load (0.2ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "owners"[0m
+Started DELETE "/owners/980190962" for 127.0.0.1 at 2017-12-05 11:23:27 +0330
+Processing by OwnersController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "owners" WHERE "owners"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/owners
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "owners"[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+OwnersControllerTest: test_should_get_index
+-------------------------------------------
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/owners" for 127.0.0.1 at 2017-12-05 11:23:27 +0330
+Processing by OwnersController#index as HTML
+  Rendering owners/index.html.erb within layouts/application
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT "owners".* FROM "owners"[0m
+  Rendered owners/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------
+OwnersControllerTest: test_should_get_new
+-----------------------------------------
+  [1m[36mOwner Load (0.1ms)[0m  [1m[34mSELECT  "owners".* FROM "owners" WHERE "owners"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/owners/new" for 127.0.0.1 at 2017-12-05 11:23:27 +0330
+Processing by OwnersController#new as HTML
+  Rendering owners/new.html.erb within layouts/application
+  Rendered owners/_form.html.erb (1.2ms)
+  Rendered owners/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
